@@ -1,20 +1,14 @@
 package com.github.virelion.react
 
 import kotlinx.browser.document
-import react.*
 import react.dom.*
 
 fun main() {
     val root = document.getElementById("root")
+    val component = MainComponent()
     render(root, callback = {}) {
-        app()
-    }
-}
+        child(MainComponent::class) {
 
-fun RBuilder.app() {
-    div {
-        p {
-            +"Hello world"
         }
     }
 }
