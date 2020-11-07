@@ -18,6 +18,8 @@ kotlin {
 }
 
 dependencies {
+    implementation(project(":frontend:frontend-commons"))
+
     implementation("org.jetbrains:kotlin-react:$kotlinReactVersion")
     implementation("org.jetbrains:kotlin-react-dom:$kotlinReactVersion")
     implementation("org.jetbrains:kotlin-react-router-dom:5.1.2-pre.124-kotlin-1.4.10")
@@ -25,5 +27,5 @@ dependencies {
 
     implementation(npm("react-quill", "1.3.5"))
     implementation(npm("axios", "0.19.2"))
-    api(npm("react-router-dom", "5.2.0"))
+    implementation(npm("react-router-dom", "5.2.0"))
 }

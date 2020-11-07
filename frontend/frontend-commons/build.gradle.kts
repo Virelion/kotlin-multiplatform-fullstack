@@ -4,9 +4,10 @@ plugins {
 }
 
 val coroutinesVersion: String by project
+val ktorVersion: String by project
 
 kotlin {
-    jvm()
+//    jvm()
     js {
         nodejs {
             testTask {
@@ -18,6 +19,9 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(project(":commons"))
+//                implementation("io.ktor:ktor-client-core:$ktorVersion")
+
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
             }
         }
@@ -27,18 +31,19 @@ kotlin {
             }
         }
 
-        val jvmMain by getting {
-            dependencies {
-            }
-        }
-
-        val jvmTest by getting {
-            dependencies {
-            }
-        }
+//        val jvmMain by getting {
+//            dependencies {
+//            }
+//        }
+//
+//        val jvmTest by getting {
+//            dependencies {
+//            }
+//        }
 
         val jsTest by getting {
             dependencies {
+//                implementation("io.ktor:ktor-client-js:$ktorVersion")
             }
         }
     }
