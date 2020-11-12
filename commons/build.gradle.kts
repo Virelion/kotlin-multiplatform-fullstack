@@ -1,9 +1,11 @@
 plugins {
     kotlin("multiplatform")
     id("org.jlleitschuh.gradle.ktlint")
+    kotlin("plugin.serialization")
 }
 
 val coroutinesVersion: String by project
+val kotlinxSerializationVersion: String by project
 
 kotlin {
     jvm()
@@ -19,6 +21,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion")
+                api("org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinxSerializationVersion")
             }
         }
 

@@ -20,9 +20,6 @@ class PortalComponent : RComponent<PortalProps, RState>(){
 
     override fun RBuilder.render() {
         div {
-            h1 {
-                +"Hello ${props.userName}"
-            }
             button {
                 +"Sign out"
                 attrs {
@@ -31,6 +28,7 @@ class PortalComponent : RComponent<PortalProps, RState>(){
                     }
                 }
             }
+            child(QuestionsComponent::class) { }
         }
     }
 

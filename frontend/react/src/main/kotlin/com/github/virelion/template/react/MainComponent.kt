@@ -15,7 +15,7 @@ class MainComponent: RComponent<RProps, AuthState>() {
 
     init {
         appCore = coreImpl
-        state.authenticationDataResponse = null
+        state.authenticationDataResponse = AuthenticationDataResponse("", "guest")
 
         appCore.authenticationListener.subscribe("MainComponent") {
             setState {
@@ -23,7 +23,6 @@ class MainComponent: RComponent<RProps, AuthState>() {
             }
         }
     }
-
 
     override fun RBuilder.render() {
         div {
